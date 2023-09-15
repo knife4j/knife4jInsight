@@ -1,0 +1,25 @@
+# 通过docker-compose可以快速部署knife4j服务
+version: "2.0"
+services:
+  knife4j:
+    container_name: knife4j-insight
+    restart: always
+    # Knife4jInsight版本
+    image: "xiaoymin/knife4jInsight:v1.0.0"
+    network_mode: "bridge"
+    ports:
+      - "10086:10086"
+    # 指定环境变量，主要是数据库和license
+    environment:
+      # 数据库名称
+      - MYSQL_DB=knife4j_insight
+      # 数据库ip地址
+      - MYSQL_HOST=127.0.0.1
+      # 数据库端口
+      - MYSQL_PORT=3306
+      # 数据库用户名
+      - MYSQL_USERNAME=root
+      # 数据库密码
+      - MYSQL_PASSWORD=123456
+      # license信息
+      - LICENSE=xxxxlicense信息
