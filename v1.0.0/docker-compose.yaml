@@ -6,10 +6,12 @@ services:
     restart: always
     # Knife4jInsight版本
     image: "xiaoymin/knife4jInsight:v1.0.0"
+    # 设定一个cpu核心
+    cpuset: '2'
     network_mode: "bridge"
     ports:
       - "10086:10086"
-    # 指定环境变量，主要是数据库和license
+    # 指定环境变量，主要是数据库和license(替换为实际情况)
     environment:
       # 数据库名称
       - MYSQL_DB=knife4j_insight
