@@ -5,7 +5,7 @@ services:
     container_name: knife4j-insight
     restart: always
     # Knife4jInsight版本
-    image: "xiaoymin/knife4jInsight:v1.0.0"
+    image: "xiaoymin/knife4j-insight:v1.0.0"
     # 设定一个cpu核心
     cpuset: '2'
     network_mode: "bridge"
